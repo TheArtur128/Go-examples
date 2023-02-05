@@ -19,6 +19,15 @@ func (user *User) createComingOfAgeMessage() string {
    }
 }
 
+func (user *User) createResume() string {
+   return fmt.Sprintf(
+      "%s is %d years old. %s",
+      user.name,
+      user.age,
+      user.createComingOfAgeMessage(),
+   )
+}
+
 func getNumericByte() int {
    var first int = 100
    var second int
