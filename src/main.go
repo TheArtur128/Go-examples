@@ -46,4 +46,7 @@ func printGo() {
 }
 
 func main() {
+   user := User{"Max", 22}
+
+   fmt.Println(user.createResume())
 }
