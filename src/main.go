@@ -11,6 +11,14 @@ func (user *User) isAdult() bool {
    return user.age >= 18
 }
 
+func (user *User) createComingOfAgeMessage() string {
+   if user.isAdult() {
+      return "Adult"
+   } else {
+      return "Not adult"
+   }
+}
+
 func getNumericByte() int {
    var first int = 100
    var second int
