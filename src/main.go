@@ -2,6 +2,11 @@ package main
 
 import ("fmt")
 
+type User struct {
+   name string
+   age uint8
+}
+
 func getNumericByte() int {
    var first int = 100
    var second int
