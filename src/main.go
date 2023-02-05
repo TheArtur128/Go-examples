@@ -7,6 +7,10 @@ type User struct {
    age uint8
 }
 
+func (user *User) isAdult() bool {
+   return user.age >= 18
+}
+
 func getNumericByte() int {
    var first int = 100
    var second int
