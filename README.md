@@ -1,2 +1,2 @@
-# Golculator
-Small calculator written in Go
+## Go-examples
+My written code while learning Go
