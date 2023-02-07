@@ -7,24 +7,24 @@ type User struct {
    age uint8
 }
 
-func (user *User) isAdult() bool {
+func (user *User) IsAdult() bool {
    return user.age >= 18
 }
 
-func (user *User) createComingOfAgeMessage() string {
-   if user.isAdult() {
+func (user *User) CreateComingOfAgeMessage() string {
+   if user.IsAdult() {
       return "Adult"
    } else {
       return "Not adult"
    }
 }
 
-func (user *User) createResume() string {
+func (user *User) CreateResume() string {
    return fmt.Sprintf(
       "%s is %d years old. %s",
       user.name,
       user.age,
-      user.createComingOfAgeMessage(),
+      user.CreateComingOfAgeMessage(),
    )
 }
 
@@ -41,12 +41,12 @@ func getNumericByte() int {
    return first + second + third
 }
 
-func printGo() {
+func PrintGo() {
    fmt.Println(string(byte(71)) + string(byte(111)))
 }
 
 func main() {
    user := User{"Max", 22}
 
-   fmt.Println(user.createResume())
+   fmt.Println(user.CreateResume())
 }
