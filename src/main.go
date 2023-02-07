@@ -102,6 +102,21 @@ func ChangeTo[valueT any](value valueT, reference *valueT) {
    *reference = value
 }
 
+func CreateMultiplicationTable(start int, end int) [][]int {
+   columnLength := end - start
+
+   table := make([][]int, columnLength)
+
+   for yIndex := 0; yIndex < columnLength; yIndex++ {
+      table[yIndex] = make([]int, columnLength)
+
+      for xIndex := 0; xIndex < columnLength; xIndex++ {
+         table[yIndex][xIndex] = (xIndex + columnLength) * (yIndex + columnLength)
+      }
+   }
+
+   return table
+}
 
 var user User
 
