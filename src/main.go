@@ -120,8 +120,14 @@ func CreateMultiplicationTable(start int, end int) [][]int {
 
 var user User
 
+var numbers []int
+var numbersWithMultiplied []int
+
 func init() {
    user = User{"Max", 22}
+
+   numbers = []int{ 2, 4, 8 }
+   numbersWithMultiplied = AddExponentiated(numbers)  
 }
 
 func main() {
