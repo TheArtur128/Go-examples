@@ -133,5 +133,30 @@ func init() {
 func main() {
    fmt.Println(user.CreateResume())
 
+   fmt.Println(numbersWithMultiplied)
+
+   fmt.Println(numbers)
+   fmt.Println(numbersWithMultiplied[len(numbers):])
+
+   fmt.Println(sum(numbersWithMultiplied...))
+
    fmt.Println(underKey("alphabet", CreateAlphabet()))
+
+   fmt.Println(Echo(42) + 22)
+
+   Go()
+
+   fmt.Println(ReferenceFor(256))
+
+   number := 64
+
+   fmt.Printf("Was %d, now ", number)
+
+   ChangeTo(256, &number)
+
+   fmt.Println(number)
+
+   fmt.Println(*new(User))
+
+   fmt.Println(CreateMultiplicationTable(1, 11))
 }
