@@ -2,6 +2,10 @@ package main
 
 import ("fmt")
 
+type Descriptive interface {
+   CreateResume() string
+}
+
 type User struct {
    name string
    age uint8
