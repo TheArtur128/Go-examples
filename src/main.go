@@ -71,6 +71,11 @@ func PrintGo() {
 }
 
 
+func Echo[resourceT any](resource resourceT) resourceT {
+   defer fmt.Println(resource)
+   return resource
+}
+
 
 var user User
 
