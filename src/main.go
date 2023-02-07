@@ -44,8 +44,14 @@ func PrintGo() {
    fmt.Println(string(byte(71)) + string(byte(111)))
 }
 
-func main() {
-   user := User{"Max", 22}
 
+
+var user User
+
+func init() {
+   user = User{"Max", 22}
+}
+
+func main() {
    fmt.Println(user.CreateResume())
 }
