@@ -1,6 +1,9 @@
 package main
 
-import ("fmt")
+import (
+   "fmt";
+   "time";
+)
 
 type Descriptive interface {
    CreateResume() string
@@ -74,6 +77,22 @@ func PrintGo() {
 func Echo[resourceT any](resource resourceT) resourceT {
    defer fmt.Println(resource)
    return resource
+}
+
+func Go() {
+   defer fmt.Println("Stop")
+
+   for i := 0; i < 9; i++ {
+      go fmt.Println("Go")
+   }
+
+   for i := 0; i < 5; i++ {
+      go fmt.Println("Don't Go")
+   }
+
+   fmt.Println("START OF SLEEP")
+   time.Sleep(500 * time.Millisecond)
+   fmt.Println("END OF SLEEP")
 }
 
 
