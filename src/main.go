@@ -73,7 +73,6 @@ func PrintGo() {
    fmt.Println(string(byte(71)) + string(byte(111)))
 }
 
-
 func Echo[resourceT any](resource resourceT) resourceT {
    defer fmt.Println(resource)
    return resource
