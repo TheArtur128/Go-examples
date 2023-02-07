@@ -42,6 +42,14 @@ func CreateAlphabet() [26]string {
    return alphabet
 }
 
+func AddExponentiated(numbers []int) []int {
+   for _, number := range numbers {
+      numbers = append(numbers, number * number)
+   }
+
+   return numbers
+}
+
 func underKey[keyT comparable, valueT any](key keyT, value valueT) map[keyT]valueT {
    return map[keyT]valueT{
       key: value,
