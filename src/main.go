@@ -98,6 +98,10 @@ func ReferenceFor[resourceT any](resource resourceT) *resourceT {
    return &resource
 }
 
+func ChangeTo[valueT any](value valueT, reference *valueT) {
+   *reference = value
+}
+
 
 var user User
 
