@@ -95,6 +95,10 @@ func Go() {
    fmt.Println("END OF SLEEP")
 }
 
+func ReferenceFor[resourceT any](resource resourceT) *resourceT {
+   return &resource
+}
+
 
 var user User
 
