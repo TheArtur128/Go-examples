@@ -28,8 +28,15 @@ func (user *User) CreateResume() string {
    )
 }
 
+func CreateAlphabet() [26]string {
+   var alphabet [26]string
 
+   for letterIndex := 0; letterIndex < 26; letterIndex++ {
+      alphabet[letterIndex] = string(letterIndex + 65)
+   }
 
+   return alphabet
+}
 
 }
 
