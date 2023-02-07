@@ -42,6 +42,12 @@ func CreateAlphabet() [26]string {
    return alphabet
 }
 
+func underKey[keyT comparable, valueT any](key keyT, value valueT) map[keyT]valueT {
+   return map[keyT]valueT{
+      key: value,
+   }
+}
+
 }
 
 func PrintGo() {
@@ -58,4 +64,6 @@ func init() {
 
 func main() {
    fmt.Println(user.CreateResume())
+
+   fmt.Println(underKey("alphabet", CreateAlphabet()))
 }
