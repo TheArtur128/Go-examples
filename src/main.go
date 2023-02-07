@@ -56,6 +56,14 @@ func underKey[keyT comparable, valueT any](key keyT, value valueT) map[keyT]valu
    }
 }
 
+func sum[elementT int](elements ...elementT) elementT {
+   var sum_of_elements elementT
+
+   for _, element := range elements {
+      sum_of_elements += element
+   }
+
+   return sum_of_elements
 }
 
 func PrintGo() {
