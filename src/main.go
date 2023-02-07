@@ -28,17 +28,9 @@ func (user *User) CreateResume() string {
    )
 }
 
-func getNumericByte() int {
-   var first int = 100
-   var second int
-   third := 0
 
-   second = 50
-   second += 6
 
-   third = 100
 
-   return first + second + third
 }
 
 func PrintGo() {
