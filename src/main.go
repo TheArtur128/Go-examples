@@ -118,6 +118,9 @@ func Echo[resourceT any](resource resourceT) resourceT {
 }
 
 func Go() {
+   const NUMBER_OF_RUNS_OF_WALKING_ROUTINE int = 9
+   const NUMBER_OF_STARTS_OF_STOP_ROUTINE int = 5
+
    exit := make(chan string)
 
    defer close(exit)
@@ -127,15 +130,15 @@ func Go() {
       exit <- fmt.Sprintf("from %s", name)
    }
 
-   for i := 0; i < 9; i++ {
+   for i := 0; i < NUMBER_OF_RUNS_OF_WALKING_ROUTINE; i++ {
       go routine("first", "Go")
    }
 
-   for i := 0; i < 5; i++ {
+   for i := 0; i < NUMBER_OF_STARTS_OF_STOP_ROUTINE; i++ {
       go routine("second", "Don't Go")
    }
 
-   for i := 0; i < 9 + 5; i++ {
+   for i := 0; i < NUMBER_OF_RUNS_OF_WALKING_ROUTINE + NUMBER_OF_STARTS_OF_STOP_ROUTINE; i++ {
       fmt.Println("Get", <- exit)
    }
 
