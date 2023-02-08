@@ -2,7 +2,6 @@ package main
 
 import (
    "fmt";
-   "time";
 )
 
 type Descriptive interface {
@@ -119,19 +118,28 @@ func Echo[resourceT any](resource resourceT) resourceT {
 }
 
 func Go() {
-   defer fmt.Println("Stop")
+   exit := make(chan string)
+
+   defer close(exit)
+
+   routine := func (name string, message string) {
+      fmt.Println(message)
+      exit <- fmt.Sprintf("from %s", name)
+   }
 
    for i := 0; i < 9; i++ {
-      go fmt.Println("Go")
+      go routine("first", "Go")
    }
 
    for i := 0; i < 5; i++ {
-      go fmt.Println("Don't Go")
+      go routine("second", "Don't Go")
    }
 
-   fmt.Println("START OF SLEEP")
-   time.Sleep(500 * time.Millisecond)
-   fmt.Println("END OF SLEEP")
+   for i := 0; i < 9 + 5; i++ {
+      fmt.Println("Get", <- exit)
+   }
+
+   fmt.Println("Stop")
 }
 
 func ReferenceFor[resourceT any](resource resourceT) *resourceT {
