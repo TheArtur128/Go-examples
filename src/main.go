@@ -28,10 +28,11 @@ type User struct {
 
 func (user *User) CreateResume() string {
    return fmt.Sprintf(
-      "%s is %d years old. %s",
+      "%s is %d years old. %s and %s",
       user.name,
       user.age,
       user.createComingOfAgeMessage(),
+      user.createLivelinessMessage(),
    )
 }
 
