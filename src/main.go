@@ -24,11 +24,7 @@ func (user *User) IsAdult() bool {
    return user.age >= 18
 }
 
-func (user *User) CreateComingOfAgeMessage() string {
-   if user.IsAdult() {
-      return "Adult"
    } else {
-      return "Not adult"
    }
 }
 
@@ -37,8 +33,16 @@ func (user *User) CreateResume() string {
       "%s is %d years old. %s",
       user.name,
       user.age,
-      user.CreateComingOfAgeMessage(),
+      user.createComingOfAgeMessage(),
    )
+}
+
+func (user *User) createComingOfAgeMessage() string {
+   if user.age.IsAdult() {
+      return "Adult"
+   } else {
+      return "Not adult"
+   }
 }
 
 func CreateAlphabet() [26]string {
