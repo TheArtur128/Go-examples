@@ -158,11 +158,11 @@ func CreateMultiplicationTable(start int, end int) [][]int {
 
    table := make([][]int, columnLength)
 
-   for yIndex := 0; yIndex < columnLength; yIndex++ {
-      table[yIndex] = make([]int, columnLength)
+   for y := 0; y < columnLength; y++ {
+      table[y] = make([]int, columnLength)
 
-      for xIndex := 0; xIndex < columnLength; xIndex++ {
-         table[yIndex][xIndex] = (xIndex + columnLength) * (yIndex + columnLength)
+      for x := 0; x < columnLength; x++ {
+         table[y][x] = (x + start) * (y + start)
       }
    }
 
