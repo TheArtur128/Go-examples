@@ -20,9 +20,6 @@ type User struct {
    age Age
 }
 
-func (user *User) IsAdult() bool {
-   return user.age >= 18
-}
 
    } else {
    }
