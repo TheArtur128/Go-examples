@@ -169,6 +169,16 @@ func CreateMultiplicationTable(start int, end int) [][]int {
    return table
 }
 
+func IndexOf[objectT comparable](object objectT, set []objectT) (int, bool) {
+   for itemIndex, item := range set {
+      if object == item {
+         return itemIndex, true
+      }
+   }
+
+   return -1, false
+}
+
 var user User
 
 var numbers []int
