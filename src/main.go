@@ -179,6 +179,20 @@ func IndexOf[objectT comparable](object objectT, set []objectT) (int, bool) {
    return -1, false
 }
 
+func Lower(line string) string {
+   newLine := make([]rune, len(line))
+
+   for letterIndex, letter := range line {
+      if 65 <= letter && letter < 91 {
+         newLine[letterIndex] = letter + 32
+      } else {
+         newLine[letterIndex] = letter
+      }
+   }
+
+   return string(newLine)
+}
+
 var user User
 
 var numbers []int
