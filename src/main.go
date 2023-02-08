@@ -258,5 +258,7 @@ func main() {
 
    fmt.Println(*new(User))
 
-   fmt.Println(CreateMultiplicationTable(1, 11))
+   for _, column := range CreateMultiplicationTable(1, 11) {
+      fmt.Println(column)
+   }
 }
