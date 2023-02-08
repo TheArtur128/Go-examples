@@ -18,6 +18,7 @@ func (age *Age) IsAdult() bool {
 type User struct {
    name string
    age Age
+   isAlive bool
 }
 
 
