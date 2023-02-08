@@ -9,9 +9,15 @@ type Descriptive interface {
    CreateResume() string
 }
 
+type Age uint8
+
+func (age *Age) IsAdult() bool {
+   return *age >= 18
+}
+
 type User struct {
    name string
-   age uint8
+   age Age
 }
 
 func (user *User) IsAdult() bool {
@@ -124,7 +130,7 @@ var numbers []int
 var numbersWithMultiplied []int
 
 func init() {
-   user = User{"Max", 22}
+   user = User{"Max", Age(22), true}
 
    numbers = []int{ 2, 4, 8 }
    numbersWithMultiplied = AddExponentiated(numbers)  
