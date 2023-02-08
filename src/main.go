@@ -225,6 +225,12 @@ func init() {
 }
 
 func main() {
+   defer func() {
+      if err := recover(); err != nil {
+         fmt.Println("There was a panic that", err)
+      }
+   }()
+
    fmt.Println(user.CreateResume())
 
    fmt.Println(numbersWithMultiplied)
