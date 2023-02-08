@@ -273,4 +273,18 @@ func main() {
       1.9, IsNumber(1.9),
       "this is a string", IsNumber("this is a string"),
    )
+
+   err := user.Die()
+
+   if err != nil {
+      panic(err)
+   }
+
+   fmt.Println(user.CreateResume())
+
+   err = user.Die()
+
+   if err != nil {
+      panic(err)
+   }
 }
