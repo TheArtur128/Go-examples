@@ -193,6 +193,16 @@ func Lower(line string) string {
    return string(newLine)
 }
 
+func PositionReportIn[objectT comparable](location []objectT, object objectT) string {
+   index, exists := IndexOf(object, location)
+
+   if exists {
+      return fmt.Sprintf("Object %v is in array %v at index %b", object, location, index)
+   } else {
+      return fmt.Sprintf("Object %v isn't in array %v", object, location)
+   }
+}
+
 var user User
 
 var numbers []int
