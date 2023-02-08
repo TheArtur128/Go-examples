@@ -9,6 +9,19 @@ type Descriptive interface {
    CreateResume() string
 }
 
+type UserError struct {
+   user *User
+   err error
+}
+
+func (err UserError) Error() string {
+   return err.err.Error()
+}
+
+func (err UserError) Unwrap() error {
+   return err.err
+}
+
 type Age uint8
 
 func (age *Age) IsAdult() bool {
