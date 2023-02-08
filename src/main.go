@@ -287,4 +287,6 @@ func main() {
    if err != nil {
       panic(err)
    }
+
+   panic("Everything is lost") // Doesn't panic because it already panics about a dead user
 }
