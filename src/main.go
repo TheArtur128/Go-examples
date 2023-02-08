@@ -43,6 +43,14 @@ func (user *User) createComingOfAgeMessage() string {
    }
 }
 
+func (user *User) createLivelinessMessage() string {
+   if user.isAlive {
+      return "Alive"
+   } else {
+      return "Not alive"
+   }
+}
+
 func CreateAlphabet() [26]string {
    var alphabet [26]string
 
