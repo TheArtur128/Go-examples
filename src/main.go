@@ -53,13 +53,13 @@ func AddExponentiated(numbers []int) []int {
    return numbers
 }
 
-func underKey[keyT comparable, valueT any](key keyT, value valueT) map[keyT]valueT {
+func UnderKey[keyT comparable, valueT any](key keyT, value valueT) map[keyT]valueT {
    return map[keyT]valueT{
       key: value,
    }
 }
 
-func sum[elementT int](elements ...elementT) elementT {
+func Sum[elementT int | float32](elements ...elementT) elementT {
    var sum_of_elements elementT
 
    for _, element := range elements {
@@ -138,9 +138,9 @@ func main() {
    fmt.Println(numbers)
    fmt.Println(numbersWithMultiplied[len(numbers):])
 
-   fmt.Println(sum(numbersWithMultiplied...))
+   fmt.Println(Sum(numbersWithMultiplied...))
 
-   fmt.Println(underKey("alphabet", CreateAlphabet()))
+   fmt.Println(UnderKey("alphabet", CreateAlphabet()))
 
    fmt.Println(Echo(42) + 22)
 
