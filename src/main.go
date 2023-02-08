@@ -34,8 +34,18 @@ type User struct {
    isAlive bool
 }
 
+func (user *User) Die() error {
+   if user.isAlive {
+      user.isAlive = false
 
+      return nil
    } else {
+      err := UserError{
+         user,
+         fmt.Errorf("an user at %p is already dead", user),
+      }
+
+      return err
    }
 }
 
