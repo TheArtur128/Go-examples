@@ -261,4 +261,16 @@ func main() {
    for _, column := range CreateMultiplicationTable(1, 11) {
       fmt.Println(column)
    }
+
+   fmt.Println(Lower("THIS MESSAGE MUST NOT BE IN UPPERCASE"))
+
+   fmt.Println(PositionReportIn(numbers, 4))
+   fmt.Println(PositionReportIn(numbers, 5))
+
+   fmt.Printf(
+      "Are numbers?\n\t%d - %t\n\t%f - %t\n\t%s - %t\n",
+      256, IsNumber(256),
+      1.9, IsNumber(1.9),
+      "this is a string", IsNumber("this is a string"),
+   )
 }
